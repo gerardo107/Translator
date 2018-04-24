@@ -51,24 +51,24 @@ verb(gv(V),_,Num, [Traduc])-->verbo(V,Num,Traduc).
 
 verb(gv(V,CD),_,Num, Traduccion)-->
 								verbo(V,Num,TrV),
-								complemento(CD,_,_,TrGN),
+								complemento(CD,_,_,TrN),
 								{
-								  append([TrV], TrGN, Traduccion)
+								  append([TrV], TrN, Traduccion)
 								}.
 
 verb(gv(V,CD),_,Num, Traduccion)-->
 								
 								verbo(V,Num,TrV),
-								nom(CD,_,_,TrGN),
+								nom(CD,_,_,TrN),
 								{
-								  append([TrV], TrGN, Traduccion)
+								  append([TrV], TrN, Traduccion)
 								}.
 
 prepo(gp(P,N),Num,Traduccion)-->
 								preposicion(P,Tr),
-								nom(N,_,Num,TrGN),
+								nom(N,_,Num,TrN),
 								{
-								  append([Tr],TrGN,Traduccion)
+								  append([Tr],TrN,Traduccion)
 								}.
 
 complemento(c(Adj,Nombre),_,_,Traduccion)-->
@@ -246,11 +246,6 @@ verbT(sleeps, singular, duerme).
 verbT(sleep, plural, dormimos).
 verbT(sleep, plural, duermen).
 
-verbT(play, singular, juego).
-verbT(play, singular, juegas).
-verbT(plays, singular, juega).
-verbT(play, plural, jugamos).
-verbT(play, plural, juegan).
 
 verbT(play, singular, juego).
 verbT(play, singular, juegas).
@@ -269,6 +264,31 @@ verbT(run, singular, corres).
 verbT(runs, singular, corre).
 verbT(run, plural, corremos).
 verbT(run, plural, corren).
+
+verbT('write', singular, escribo).
+verbT('write', singular, escribes).
+verbT('writes', singular, escribe).
+verbT('write', plural, escribimos).
+verbT('write', plural, escriben).
+
+verbT(swim, singular, nado).
+verbT(swim, singular, nadas).
+verbT(swims, singular, nada).
+verbT(swim, plural, nadamos).
+verbT(swim, plural, nadan).
+
+verbT(speak, singular, hablo).
+verbT(speak, singular, hablas).
+verbT(speaks, singular, habla).
+verbT(speak, plural, hablamos).
+verbT(speak, plural, hablan).
+
+verbT(think, singular, pienso).
+verbT(think, singular, piensas).
+verbT(thinks, singular, peinsa).
+verbT(think, plural, pensamos).
+verbT(think, plural, pensaron).
+
 %pasado
 verbT(ate, singular, comi).
 verbT(ate, singular, comiste).
@@ -305,6 +325,30 @@ verbT(ran, singular, corriste).
 verbT(ran, singular, corrio).
 verbT(ran, plural, corrimos).
 verbT(ran, plural, corrieron).
+
+verbT(wrote, singular, escribi).
+verbT(wrote, singular, escribiste).
+verbT(wrote, singular, escribio).
+verbT(wrote, plural, escribimos).
+verbT(wrote, plural, escribieron).
+
+verbT(swam, singular, nade).
+verbT(swam, singular, nadaste).
+verbT(swam, singular, nado).
+verbT(swam, plural, nadamos).
+verbT(swam, plural, nadaron).
+
+verbT(talked, singular, hable).
+verbT(talked, singular, hablaste).
+verbT(talked, singular, hablo).
+verbT(talked, plural, hablamos).
+verbT(talked, plural, hablaron).
+
+verbT(thought, singular, pense).
+verbT(thought, singular, pensaste).
+verbT(thought, singular, penso).
+verbT(thought, plural, pensamos).
+verbT(thought, plural, pensaron).
 
 preposicion(preposicion(P),Traduccion)-->
 			[P],
